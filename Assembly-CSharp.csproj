@@ -62,6 +62,9 @@
      <Compile Include="Assets\Scripts\ILevelObject.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+ <Reference Include="Cinemachine">
+ <HintPath>/Users/cobra/Unity專案/貓利歐/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/cobra/Unity專案/貓利歐/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
@@ -70,6 +73,9 @@
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>/Users/cobra/Unity專案/貓利歐/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>/Users/cobra/Unity專案/貓利歐/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>/Users/cobra/Unity專案/貓利歐/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
