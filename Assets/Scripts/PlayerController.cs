@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		CheckIsGrounded();
+		// CheckIsGrounded();
         InputProcess();
     }
     private void InputProcess(){
@@ -166,6 +166,7 @@ public class PlayerController : MonoBehaviour
 
 	public void Reset(){
 		isDead = false;
+		rig2d.velocity = Vector3.zero;
 		anim.SetBool("Die", false);
 	}
 
@@ -196,11 +197,13 @@ public class PlayerController : MonoBehaviour
 	void OnCollisionStay2D(Collision2D col)
 	{
 		if (col.contacts[0].normal != Vector2.up) { return; }
+		anim.SetBool("IsGrounded", true);
 		isGrounded = true;
 	}
 
 	void OnCollisionExit2D(Collision2D col)
 	{
+		anim.SetBool("IsGrounded", false);
 		isGrounded = false;
 	}
 

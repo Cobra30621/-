@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\NormalEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\TurtleEnemy.cs" />
+     <Compile Include="Assets\Scripts\FallingGround.cs" />
      <Compile Include="Assets\Scripts\GameRestartPanel.cs" />
      <Compile Include="Assets\Scripts\IBox.cs" />
      <Compile Include="Assets\Scripts\ILevelObject.cs" />
