@@ -14,7 +14,7 @@ public class NormalEnemy : Enemy
     {
         // stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-        if (!_player.isDead && !isHit && !isDead)
+        if (!_player.isDead && !isHit && !isDead && !canMove)
         {
             Move();
         }
@@ -30,11 +30,13 @@ public class NormalEnemy : Enemy
         }
 	}
 
+    public void SetCanMove(bool bo){
+        canMove = bo;
+    }
+
     protected override void Init()
     {
-        enemyLayer = LayerMask.NameToLayer("Enemy");
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        enemyRig = GetComponent<Rigidbody2D>();
+        base.Init();
         // anim = GetComponentInChildren<Animator>();
     }
 
@@ -43,7 +45,7 @@ public class NormalEnemy : Enemy
         // anim.SetTrigger("Hit");
         CloseCollidersInChild(this.transform);
         enemyRig.isKinematic = true;
-        this.gameObject.SetActive(false);
+        body.SetActive(false);
         // if (stateInfo.IsName("Hit") && stateInfo.normalizedTime >= 1f)
         // {
         //     this.gameObject.SetActive(false);

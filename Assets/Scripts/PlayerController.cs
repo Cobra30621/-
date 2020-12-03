@@ -130,6 +130,11 @@ public class PlayerController : MonoBehaviour
 		transform.eulerAngles = new Vector3(0, 180 * i, 0);
 	}
 
+	public void SetEanbleControl(){
+		enableControl = true;
+		SetGravity(true);
+	}
+
 	void CheckIsGrounded()
 	{
 		Vector2 check = checkPoint.position;
@@ -162,6 +167,7 @@ public class PlayerController : MonoBehaviour
 	public void DieFinish(){
 		Debug.Log("DieFinish");
 		_levelManager.PlayerDead();
+		SetGravity(false);
 	}
 
 	public void Reset(){
@@ -179,6 +185,13 @@ public class PlayerController : MonoBehaviour
 		AudioClip ac = SEs[se];
 		AudioSource.PlayClipAtPoint(ac, Camera.main.transform.position);
 	}
+
+	private void SetGravity(bool bo){
+        if(bo)
+            rig2d.gravityScale = 2;
+        else
+            rig2d.gravityScale = 0;
+    }
 
 	//==========
 	// 動畫

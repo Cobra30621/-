@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
     public int heart;
     private GameObject _player;
     private PlayerController _playerController;
-    private Vector2 _playerStartPos;
+    private Vector3 _playerStartPos;
     // Start is called before the first frame update
     // List<IItem>
     public List<ILevelObject> levelObjects = new List<ILevelObject>();
@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void GameStart(){
-        _playerController.enableControl = true;
+        _playerController.SetEanbleControl();
     }
 
     private void ResetPlayer(){
