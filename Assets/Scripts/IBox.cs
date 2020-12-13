@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class IBox : ILevelObject
 {
-
+    public GameObject showObject;
     public GameObject boxCollider;
+    private BoxCollider2D boxCollider2D;
+    public Color color;
     
     /// <summary>
     /// OnTriggerEnter is called when the Collider other enters the trigger.
@@ -19,7 +21,6 @@ public class IBox : ILevelObject
         Debug.Log("if(hadTrigger = true)");
         if(other.tag == "Player")
             OnHeadHit(other);
-        Debug.Log("other.tag == )");
     }
 
     public void OnHeadHit(Collider2D other){
@@ -31,16 +32,34 @@ public class IBox : ILevelObject
         if(vec_y > 0) {
             SetBoxCollider(true);
             hadTrigger = true;
+            showObject.SetActive(true);
+            showObject.GetComponent<ShowObject>().Show();
         }
     }
 
     public override void Reset(){
         base.Reset();
         SetBoxCollider(false);
+        showObject.GetComponent<ShowObject>().Reset();
+        showObject.SetActive(false);
     }
 
     public void SetBoxCollider(bool bo){
         boxCollider.SetActive(bo);
+    }
+
+    void OnDrawGizmos()
+    {
+        boxCollider2D = boxCollider.GetComponent<BoxCollider2D>();
+        Vector3 scale = transform.localScale;
+        Vector3 size = new Vector3 ( boxCollider2D.size.x * scale.x, boxCollider2D.size.y * scale.y, 1);
+        Vector3 offset = new Vector3 ( boxCollider2D.offset.x * scale.x, boxCollider2D.offset.y * scale.y, 1);
+
+        Gizmos.color = color;
+        Gizmos.DrawWireCube(this.transform.position + offset, size);
+ 
+        Gizmos.color = new Color (color.r, color.g, color.b, 0.4f);
+        Gizmos.DrawCube(this.transform.position + offset, size);
     }
 }
 

@@ -10,4 +10,8 @@ public class ILevelObject : MonoBehaviour
         Debug.Log("我重置拉");
         hadTrigger = false;
     }
+
+    public virtual void OnTrigger(){
+        
+    }
 }
