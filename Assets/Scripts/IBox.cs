@@ -41,7 +41,6 @@ public class IBox : ILevelObject
         base.Reset();
         SetBoxCollider(false);
         showObject.GetComponent<ShowObject>().Reset();
-        showObject.SetActive(false);
     }
 
     public void SetBoxCollider(bool bo){

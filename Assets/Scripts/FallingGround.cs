@@ -8,7 +8,7 @@ public class FallingGround : ILevelObject
     public Vector3 startPos;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Init();
     }
@@ -20,6 +20,9 @@ public class FallingGround : ILevelObject
     }
     public override void Reset(){
         base.Reset();
+        if(rig2d == null)
+            rig2d = GetComponent<Rigidbody2D>();
+        
         SetGravity(false);
         transform.position = startPos;
         rig2d.velocity = Vector3.zero;
@@ -42,4 +45,5 @@ public class FallingGround : ILevelObject
         else
             rig2d.gravityScale = 0;
     }
+
 }

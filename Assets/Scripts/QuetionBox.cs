@@ -31,6 +31,7 @@ public class QuetionBox : ILevelObject
         if(vec_y > 0) {
             hadTrigger = true;
             icon.sprite = emptyIcon;
+            showObject.SetActive(true);
             showObject.GetComponent<ShowObject>().Show();
         }
     }

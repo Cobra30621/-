@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
 			Move(-1);
 			Direction(1);
 		}
-		if (Input.GetKey(KeyCode.UpArrow))
+		if (Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			Jump();
 		}
@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
 	public void Die()
 	{
 		Debug.Log("Player Die!");
+		LevelManager.StopBGM();
 		PlaySE(PlayerSE.Dead);
 		isDead = true;
 		enableControl = false;
@@ -178,7 +179,7 @@ public class PlayerController : MonoBehaviour
 
 	public void Bounce()
 	{
-		rig2d.velocity = new Vector2(rig2d.velocity.x, 5f);
+		rig2d.velocity = new Vector2(rig2d.velocity.x, 20f);
 	}
 
 	public void PlaySE(PlayerSE se){
@@ -186,9 +187,9 @@ public class PlayerController : MonoBehaviour
 		AudioSource.PlayClipAtPoint(ac, Camera.main.transform.position);
 	}
 
-	private void SetGravity(bool bo){
+	public void SetGravity(bool bo){
         if(bo)
-            rig2d.gravityScale = 2;
+            rig2d.gravityScale = 3.5f;
         else
             rig2d.gravityScale = 0;
     }

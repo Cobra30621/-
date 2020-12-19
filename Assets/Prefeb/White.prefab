@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6340865761500960231}
   m_Layer: 9
   m_Name: White
-  m_TagString: Untagged
+  m_TagString: LevelObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ Rigidbody2D:
   m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.001
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -199,4 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ea6d00dce0047d1b1cb36858cb4eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hadTrigger: 0
   canMove: 0
+  body: {fileID: 6340865761379116707}
