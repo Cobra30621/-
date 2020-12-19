@@ -21,13 +21,14 @@ public class FallingWall : ILevelObject
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         startPos = transform.position;
         SetGravity(false);
-        canKillCat = false;
+        
     }
     public override void Reset(){
         base.Reset();
         SetGravity(false);
         transform.position = startPos;
         rig2d.velocity = Vector3.zero;
+        canKillCat = false;
     }
 
 

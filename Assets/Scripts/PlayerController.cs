@@ -75,17 +75,17 @@ public class PlayerController : MonoBehaviour
 			return;
 
 		Move(0);
-		if (Input.GetKey(KeyCode.RightArrow) )
+		if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) )
 		{
 			Move(1);
 			Direction(0);
 		}
-		if (Input.GetKey(KeyCode.LeftArrow))
+		if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
 		{
 			Move(-1);
 			Direction(1);
 		}
-		if (Input.GetKeyDown(KeyCode.UpArrow))
+		if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
 		{
 			Jump();
 		}

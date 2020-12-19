@@ -25,6 +25,7 @@ public class Goal: ILevelObject
 
     public override void Reset(){
         transform.position = startPosition;
+        winPanel.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D other)
